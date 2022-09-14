@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data selfie Home</title>
+  </head>
+  <body>
+    <h1>Data Home</h1>
+    <div>
+      <a href="/home.html">Home</a>
+      |
+      <a href="/">About US</a>
+      |
+      <a href="/tabularData.html">Tabular Data</a>
+      |
+      <a href="/geoLocation_leaflet.html">Geo Location</a>
+      |
+      <a href="/all.html">AllData</a>
+    </div>
+    <img src="" id="rainbow" width="200" />
+    <script>
+      console.log('about fetch a rainbow image')
+
+      // fetch('./images/rainbow.jpg')
+      //   .then((response) => {
+      //     console.log(response)
+      //     //convert the image in blob ->binary image
+      //     return response.blob()
+      //   })
+      //   .then((res_blob) => {
+      //     console.log(res_blob)
+      //     document.getElementById('rainbow').src = URL.createObjectURL(res_blob)
+      //   })
+      //   .catch((error) => {
+      //     console.error(error)
+      //   })
+      //-------------------------using async-------------------
+      async function catchRainbow() {
+        const response = await fetch('./images/rainbow.jpg')
+        const res_blob = await response.blob()
+        document.getElementById('rainbow').src = URL.createObjectURL(res_blob)
+      }
+      catchRainbow().catch((err) => {
+        console.error(err)
+      })
+    </script>
+  </body>
+</html>

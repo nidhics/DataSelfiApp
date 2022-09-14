@@ -1,0 +1,19 @@
+body {
+    padding: 10px;
+    background-color: aliceblue;
+    margin: auto;
+    width: 50%;
+    border: 3px solid skyblue;
+
+}
+
+.center {
+   
+  text-align: center;
+} 
+  
+
+
+#details {
+    text-align: left;
+}

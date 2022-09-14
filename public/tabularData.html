@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabular Data</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  </head>
+  <body>
+    Tabular Data
+
+    <div>
+      <a href="/home.html">Home</a>
+      |
+      <a href="/">About US</a>
+      |
+      <a href="/tabularData.html">Tabular Data</a>
+      |
+      <a href="/geoLocation_leaflet.html">Geo Location</a>
+      |
+      <a href="/all.html">AllData</a>
+    </div>
+    <canvas id="chart" width="100" height="100"></canvas>
+    <script>
+      // const xlabels = []
+      // const yTemps = []
+      async function chartIt() {
+        const data = await get_data()
+
+        const ctx = document.getElementById('chart').getContext('2d')
+        const myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: data.xs,
+            datasets: [
+              {
+                label: 'Global Avg. Temp ',
+                data: data.ys,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1,
+              },
+            ],
+          },
+        })
+      }
+      async function get_data() {
+        const xs = []
+        const ys = []
+        const data = await fetch('../nasa_data.csv')
+        const res = await data.text()
+
+        const table = res.split('\n').slice(1) //remove 1st element from array
+        console.log(table)
+
+        table.forEach((row) => {
+          const column = row.split(',')
+          const year = column[0]
+          xs.push(year)
+          const mean_diff_temp = column[1]
+          ys.push(mean_diff_temp)
+          console.log(year, mean_diff_temp)
+        })
+
+        return { xs, ys }
+      }
+      chartIt()
+    </script>
+  </body>
+</html>

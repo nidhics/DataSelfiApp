@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- including p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Data selfie App</title>
+  </head>
+  <body>
+    <div class="center">
+      <h1>Data Selfie App</h1>
+
+      <div>
+        <a href="/home.html">Home</a>
+        |
+        <a href="/">About US</a>
+        |
+        <a href="/tabularData.html">Tabular Data</a>
+        |
+        <a href="/geoLocation_leaflet.html">Geo Location</a>
+        |
+        <a href="/all.html">AllData</a>
+      </div>
+      <div id="details">
+        <p>
+          latitude : <span id="latitude"></span>&deg; <br />
+          longitude :<span id="longitude"></span>&deg;
+        </p>
+        <p>
+          The weather here is <span id="summary"></span> with a temperature of
+          <span id="temp"></span> °C
+        </p>
+
+        <p>
+          The air quality Index here is <span id="aqi"></span> updated on
+          <span id="date_time"></span>
+        </p>
+
+        <label for="mood_txt">How you feel today?</label>
+        <input id="mood_txt" placeholder="How's your mood today" type="text" />
+        <button id="submit">Submit</button>
+
+        <script src="sketch.js"></script>
+      </div>
+    </div>
+  </body>
+</html>

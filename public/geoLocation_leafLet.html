@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+
+    <style>
+      #issMap {
+        height: 280px;
+      }
+      #myMap {
+        height: 300px;
+      }
+    </style>
+
+    <title>Geo location</title>
+  </head>
+  <body>
+    <!-- using -->
+    <!-- https://wheretheiss.at/ -->
+    Geo location of particular satellite using leaflet
+
+    <div>
+      <a href="/home.html">Home</a>
+      |
+      <a href="/">About US</a>
+      |
+      <a href="/tabularData.html">Tabular Data</a>
+      |
+      <a href="/geoLocation_leaflet.html">Geo Location</a>
+      |
+      <a href="/all.html">AllData</a>
+    </div>
+
+    <h1>Where is the ISS</h1>
+    <p>latitude:<span id="lat"></span></p>
+    <p>longitude:<span id="lon"></span></p>
+
+    <div id="issMap"></div>
+    <br />
+
+    <div id="myMap"></div>
+    <script src="geo_location.js"></script>
+  </body>
+</html>
